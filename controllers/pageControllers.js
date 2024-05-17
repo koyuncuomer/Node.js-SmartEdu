@@ -60,8 +60,10 @@ exports.sendEmail = async (req, res) => {
       html: outputMessage, // html body
     });
 
+    req.flash('success', 'Send Succesfully');
     res.status(200).redirect('/contact');
   } catch (error) {
-    res.json(error);
+    req.flash('error', 'Something happened!');
+    res.status(400).redirect('/contact');
   }
 };
