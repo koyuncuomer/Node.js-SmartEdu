@@ -31,7 +31,7 @@
 											</div>
 											<div class="course-desc">
 												<p>
-													<%= courses[i].desc %>
+													<%= courses[i].desc.substring(0,100) + "..." %>
 												</p>
 											</div>
 										</div>
@@ -65,7 +65,9 @@
 							<ul>
 								<% for( let i=0; i < categories.length; i++ ) { %>
 									<li>
-										<a href="/courses?category=<%= categories[i].slug %>"><%= categories[i].name %></a>
+										<a href="/courses?category=<%= categories[i].slug %>">
+											<%= categories[i].name %>
+										</a>
 									</li>
 									<% } %>
 
